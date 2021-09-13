@@ -1,9 +1,11 @@
 package com.bridgelabz.collectiondemo;
 
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
+import java.util.Set;
 import java.util.Stack;
 
 public class JavaCollectionDemo {
@@ -13,6 +15,7 @@ public class JavaCollectionDemo {
 		doListDemo();
 		doStackDemo();
 		doQueueDemo();
+		doSetDemo();
 	}
 
 	private static void doListDemo() {
@@ -32,7 +35,7 @@ public class JavaCollectionDemo {
 	}
 
 	private static void doStackDemo() {
-		
+
 		System.out.println("\nIn doStackDemo");
 		Stack<String> stack = new Stack<>();
 		stack.push("Ayush");
@@ -50,24 +53,24 @@ public class JavaCollectionDemo {
 	}
 
 	private static void doQueueDemo() {
-		
+
 		System.out.println("\nIn doQueueDemo");
 		PriorityQueue<String> queue = new PriorityQueue<>();
-		
+
 		queue.add("Amit Sharma");
 		queue.add("Vijay Raj");
 		queue.add("JaiShankar");
 		queue.add("Raj");
-		
+
 		System.out.println("Head: " + queue.element());
 		System.out.println("Head: " + queue.peek());
 		System.out.println("Iterating the queue elements:");
-		
+
 		Iterator<String> iterator = queue.iterator();
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next());
 		}
-		
+
 		queue.remove();
 		queue.poll();
 		System.out.println("\nAfter removing two elements:");
@@ -75,6 +78,21 @@ public class JavaCollectionDemo {
 		Iterator<String> iterator2 = queue.iterator();
 		while (iterator2.hasNext()) {
 			System.out.println(iterator2.next());
+		}
+	}
+
+	private static void doSetDemo() {
+
+		System.out.println("\nIn doSetDemo");
+		Set<String> set = new LinkedHashSet<>();
+		
+		set.add("Ravi");
+		set.add("Vijay");
+		set.add("Ravi");
+		set.add("Ajay");
+		
+		for (String str : set) {
+			System.out.println(str);
 		}
 	}
 }
