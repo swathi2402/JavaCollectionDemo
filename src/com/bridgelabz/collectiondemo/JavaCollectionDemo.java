@@ -1,9 +1,11 @@
 package com.bridgelabz.collectiondemo;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.Stack;
@@ -16,6 +18,7 @@ public class JavaCollectionDemo {
 		doStackDemo();
 		doQueueDemo();
 		doSetDemo();
+		doMapDemo();
 	}
 
 	private static void doListDemo() {
@@ -85,14 +88,28 @@ public class JavaCollectionDemo {
 
 		System.out.println("\nIn doSetDemo");
 		Set<String> set = new LinkedHashSet<>();
-		
+
 		set.add("Ravi");
 		set.add("Vijay");
 		set.add("Ravi");
 		set.add("Ajay");
-		
+
 		for (String str : set) {
 			System.out.println(str);
+		}
+	}
+
+	private static void doMapDemo() {
+
+		System.out.println("\nIn doMapDemo: ");
+		Map<Integer, String> map = new HashMap<>();
+
+		map.put(100, "Amit");
+		map.put(101, "Vijay");
+		map.put(102, "Rahul");
+
+		for (Map.Entry<Integer, String> mapSet : map.entrySet()) {
+			System.out.println(mapSet.getKey() + " " + mapSet.getValue());
 		}
 	}
 }
